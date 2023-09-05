@@ -16,7 +16,7 @@ public class FileController {
     @PostMapping("/upload")
     public ResponseEntity<Void> uploadFile(@RequestParam("file") MultipartFile file){
         String fileName = file.getOriginalFilename();
-        File directory = new File("/filestorage/");
+        File directory = new File("storage");
         if(!directory.exists()){
             directory.mkdir();
         }
