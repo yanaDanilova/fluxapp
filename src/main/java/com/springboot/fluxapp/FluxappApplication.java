@@ -2,6 +2,9 @@ package com.springboot.fluxapp;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
+
+import java.nio.file.Path;
 
 @SpringBootApplication
 public class FluxappApplication {

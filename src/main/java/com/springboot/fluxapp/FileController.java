@@ -14,7 +14,7 @@ import java.nio.file.Path;
 public class FileController {
 
     @PostMapping("/upload")
-    public ResponseEntity<Void> uploadFile(@RequestParam("file") MultipartFile file){
+    public ResponseEntity<Void> uploadFile(@RequestParam MultipartFile file){
         String fileName = file.getOriginalFilename();
         File directory = new File("storage");
         if(!directory.exists()){
