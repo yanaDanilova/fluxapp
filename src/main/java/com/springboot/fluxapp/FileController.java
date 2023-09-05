@@ -15,13 +15,13 @@ public class FileController {
 
     @PostMapping("/upload")
     public ResponseEntity<Void> uploadFile(@RequestParam MultipartFile file){
+
+        String uploadDir = "storage";
         String fileName = file.getOriginalFilename();
-        File directory = new File("storage");
-        if(!directory.exists()){
-            directory.mkdir();
-        }
+        String filePath = uploadDir + File.separator + fileName;
+
         try{
-            file.transferTo(Path.of(directory + fileName));
+            file.transferTo(Path.of(filePath));
             return new ResponseEntity<>(HttpStatus.CREATED);
 
         }catch (IOException e){
